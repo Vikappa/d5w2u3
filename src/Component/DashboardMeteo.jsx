@@ -50,7 +50,7 @@ function DashboardMeteo(props) {
             {currentLoadingStatus.loading ? <img src="https://http.cat/images/102.jpg" alt="loading" /> : currentLoadingStatus.error ? <img src="https://http.cat/images/400.jpg" alt="error" /> :
                 arrayPreferenze.map(position => {
                     return (
-<WeatherSmall key={position.id} position={{latitude: position.lat, longitude: position.lon}} />
+                <WeatherSmall key={position.id} position={{latitude: position.lat, longitude: position.lon}} />
                         )
                 })}
             </div>
