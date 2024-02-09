@@ -3,6 +3,14 @@ import weatherImageSorter from './Utility/weatherImageSorter' // Corretto il nom
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
+function maiuscFirstLetter(str) {
+    if (typeof str !== 'string' || str.length === 0) {
+        return str
+    }
+    return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+
 function MainPosition(props) {
 
     useEffect(() => {
@@ -11,24 +19,23 @@ function MainPosition(props) {
 
     return (
         <div>
-            <h1>Previsioni per le prossime 24 ore:</h1> 
-            <Container>
-                <Row className='gap-2'>
+            <h3>Previsioni le prossime 24 ore:</h3>
+        <div className='d-flex justify-content-evenly gap-0'>
                     {props.weatherForecast.list ? props.weatherForecast.list.map((dailyForecast, index) => (
-                        <div className='col-1 d-flex flex-column weatherColumnMain'  key={index}>
-                            <p className='forecastTime'>{dailyForecast.dt_txt}</p>
+                        <div className=' p-0 col-1 d-flex flex-column weatherColumnMain'  key={index}>
+                            <p className='forecastColumnP text-center mb-0' id='forecastTime'>{dailyForecast.dt_txt}</p>
                             <img alt="dailyIcon" src={weatherImageSorter(dailyForecast.weather[0].main)}></img>
                            <div>
-                            <p>{dailyForecast.weather[0].description}</p>
-                            <p>{dailyForecast.main.temp}° (min {dailyForecast.main.temp_min} - max {dailyForecast.main.temp_max} )</p>
-                            <p>Temperatura percepita: {dailyForecast.main.feels_like}</p>
-                            <p>Umidità: {dailyForecast.main.umidity}%</p>
-                            <p>Vento: {dailyForecast.wind.speed}mph</p>
+                            <p className='forecastColumnP text-center' >{maiuscFirstLetter(dailyForecast.weather[0].description)}</p>
+                            <p className='forecastColumnP text-center mb-0' >{dailyForecast.main.temp}°</p>
+                            <p className='forecastColumnP text-nowrap text-center mb-0' id="minmaxTemp" >(min {dailyForecast.main.temp_min} - max {dailyForecast.main.temp_max})</p>
+                            <p className='forecastColumnP text-center' id='tempPerce' >Percepita: {dailyForecast.main.feels_like}</p>
+                            <p className='forecastColumnP' >Umidità: {dailyForecast.main.umidity}%</p>
+                            <p className='forecastColumnP' >Vento: {dailyForecast.wind.speed}mph</p>
                           </div>
                         </div>
                     )) : <p>Loading...</p>}
-                </Row>
-            </Container>
+        </div>
         </div>
     )
 }

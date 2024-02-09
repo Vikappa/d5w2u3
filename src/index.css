@@ -19,7 +19,21 @@
   margin: auto 0.5rem;
 }
 
-.navBarWeather{
-  
+.weatherColumnMain{
 }
 
+.forecastColumnP{
+  font-size: 0.9rem;
+}
+
+#forecastTime{
+  font-size: 0.8rem;
+}
+
+#minmaxTemp{
+  font-size: 0.7rem;
+}
+
+#tempPerce{
+  font-size: 0.7rem;
+}
