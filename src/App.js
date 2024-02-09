@@ -34,9 +34,11 @@ function App(props) {
   const handleModalClose = () => setShowModal(false)
   const handleLocationSubmit = (event) => {
     event.preventDefault()
+    
     const formData = new FormData(event.target)
     const latitude = formData.get('latitude')
     const longitude = formData.get('longitude')
+
     setUserLocation({ latitude, longitude })
     setShowModal(false)
   }
@@ -44,6 +46,8 @@ function App(props) {
     <div>
       <NavbarMeteo logo={props.logo} userLocation={userLocation} />
       <DashboardMeteo userLocation={userLocation} />
+
+
       <Modal show={showModal} onHide={handleModalClose}>
         <Modal.Header closeButton>
           <Modal.Title>Inserisci la tua posizione</Modal.Title>

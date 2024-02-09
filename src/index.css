@@ -2,14 +2,21 @@
   
 }
 
-.navBarWeather p{
+.navvBarWheaterP{
   margin: 0;
   text-align: start;
+  font-size: 0.8rem !important;
+}
+
+.navvBarWheaterP2{
+  margin: 0;
+  text-align: start;
+  font-size: 1rem !important;
 }
 
 .navBarWeatherImg{
   height: 48px;
-  margin: auto 1rem;
+  margin: auto 0.5rem;
 }
 
 .navBarWeather{

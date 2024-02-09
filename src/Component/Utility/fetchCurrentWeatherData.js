@@ -1,7 +1,7 @@
 async function fetchCurrentWeatherData(latitudine, longitudine) {
 
     try {
-        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitudine}&lon=${longitudine}&units=metric&appid=36f11ef0b08f350df01a926d5e0f7f2d`)
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitudine}&lon=${longitudine}&units=metric&lang=it&appid=36f11ef0b08f350df01a926d5e0f7f2d`)
         if (!response.ok) {
             throw new Error('Network response was not ok')
         }
