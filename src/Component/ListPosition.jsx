@@ -1,38 +1,46 @@
 import React, { useEffect, useState } from 'react'
-import  fetchCurrentWeatherData from './Utility/fetchCurrentWeatherData'
+import fetchCurrentWeatherData from './Utility/fetchCurrentWeatherData'
+
 function ListPosition(props) {
-  const [comune, setComune] = useState('')
-console.log(props)
+  const [currentWeather, setCurrentWeather] = useState({})
+ const [currentLoadingStatus, setCurrentLoadingStatus] = useState({loading: true, error: false})
 
-  async function setItemPosition(latitude, longitude) {
-    const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
-  
-    try {
-      const response = await fetch(url)
-      const data = await response.json()
-      const comune = data.address.municipality || data.address.city //Potrebbero tornare solo uno dei due
-      setComune(comune)
-    } catch (error) {
-      console.error("Errore nel trovare il comune più vicino: ", error)
-    }
+const weateherImageSorter = (weatherString) => {
+  switch (weatherString) {
+    case 'Clouds':
+      return 'weatherIcons/Cloud.png'
+      case 'Rain':
+        return 'weatherIcons/Rain.png'
+      default: 
+      return 'error'
   }
+}
 
-
-   setItemPosition(props.position.latitude, props.position.longitude)
-  
 
   useEffect(() => {
-    if (props.location) {
-      const { latitude, longitude } = props.location
-      setItemPosition(latitude, longitude)
-        .then(setComune)
-        .catch(error => console.error("Errore durante la ricerca del comune: ", error))
+    async function getCurrentWeather() {
+      const weatherData = await fetchCurrentWeatherData(props.position.latitude, props.position.longitude)
+      if(weatherData) {
+      setCurrentWeather(weatherData)
+      setCurrentLoadingStatus({loading: false, error: false})
+      } else{
+        setCurrentLoadingStatus({loading: false, error: true})
+      }
     }
-  }, [props.location])
 
-  return(
-    <div className=''>{comune}</div>
-  )
+    getCurrentWeather()
+  }, [props.position.latitude, props.position.longitude])
+
+  return (
+    <div className='d-flex navBarWeather'>
+<img className='navBarWeatherImg' src={currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":weateherImageSorter(currentWeather.weather[0].main)} alt='weather forecast navbar' />
+    <div className='d-flex flex-column justify-content-center align-items-start'>
+    <p className='text-start' >{currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":currentWeather.name}</p>
+    <p className='text-start' >{currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":currentWeather.weather[0].description}</p>
+    <p className='text-start' >Temperatura: {currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":currentWeather.main.temp}°</p>
+    </div>
+    </div>
+  );
 }
 
 export default ListPosition

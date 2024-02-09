@@ -6,6 +6,7 @@ async function fetchCurrentWeatherData(latitudine, longitudine) {
             throw new Error('Network response was not ok')
         }
         const weatherData = await response.json()
+        console.log(weatherData)
         return weatherData
     } catch (error) {
         console.error('Errore fetch weather corrente', error)
