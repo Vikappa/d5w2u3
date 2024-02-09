@@ -18,8 +18,9 @@
   height: 48px;
   margin: auto 0.5rem;
 }
-
-.weatherColumnMain{
+.weatherColumnMain {
+  border-radius: 15px;
+  background-image: linear-gradient(to bottom, #83ffff, #d5ffff, #83ffff);
 }
 
 .forecastColumnP{
@@ -36,4 +37,8 @@
 
 #tempPerce{
   font-size: 0.7rem;
+}
+
+.forecastIcon{
+  width: 100%;
 }

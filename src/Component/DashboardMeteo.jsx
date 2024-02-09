@@ -27,7 +27,7 @@ function DashboardMeteo(props) {
     
     
     return (
-        <div className="container-fluid bg-body-tertiary d-flex flex-column flex-lg-row justify-content-between">
+        <div className="bg-body-tertiary d-flex flex-column justify-content-between">
         {currentLoadingStatus.loading?<img src='https://http.cat/images/102.jpg' alt='loading'></img>:currentLoadingStatus.error?<img src='https://http.cat/images/400.jpg' alt='error'></img>:<MainPosition weatherForecast={weatherForecast} />}
         </div>
     )
