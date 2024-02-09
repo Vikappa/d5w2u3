@@ -14,15 +14,14 @@ function maiuscFirstLetter(str) {
 function MainPosition(props) {
 
     useEffect(() => {
-        console.log(props.weatherForecast)
     }, [props.weatherForecast]) 
 
     return (
         <div className=''>
-            <h3>Previsioni le prossime 24 ore per {props.weatherForecast.city.name}:</h3>
+            <h3 className='mx-2'>Previsioni le prossime 24 ore per {props.weatherForecast.city.name}:</h3>
         <div className='d-flex justify-content-evenly flex-column flex-md-row gap-0 '>
                     {props.weatherForecast.list ? props.weatherForecast.list.map((dailyForecast, index) => (
-                        <div className=' p-0 col-1 d-flex flex-md-column weatherColumnMain'  key={index}>
+                        <div className=' p-1 col-1 d-flex flex-md-column weatherColumnMain'  key={index}>
                             <p className='forecastColumnP text-center mb-0' id='forecastTime'>{dailyForecast.dt_txt}</p>
                             <img className='forecastIcon' alt="dailyIcon" src={weatherImageSorter(dailyForecast.weather[0].main)}></img>
                            <div className='d-flex flex-md-column justify-content-center align-items-start'>

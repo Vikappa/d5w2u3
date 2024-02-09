@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import ListPosition from './ListPosition';
+import NavWeather from './NavWeather';
 
 
 function NavbarMeteo(props) {
@@ -20,7 +20,7 @@ function NavbarMeteo(props) {
               <div className=' d-flex justify-content-evenly align-items-center ms-auto gap-5 me-3'> 
 
 <div className='mx-5 d-none d-lg-inline'>
-        <ListPosition position={props.userLocation} />
+        <NavWeather position={props.userLocation} />
 </div>
 
           <Form className="d-flex mx-auto">

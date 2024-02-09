@@ -5,23 +5,33 @@
 .navvBarWheaterP{
   margin: 0;
   text-align: start;
-  font-size: 0.8rem !important;
+  font-size: 0.6rem !important;
 }
 
 .navvBarWheaterP2{
   margin: 0;
   text-align: start;
-  font-size: 1rem !important;
+  font-size: 0.8rem !important;
 }
 
 .navBarWeatherImg{
   height: 48px;
   margin: auto 0.5rem;
 }
+
 .weatherColumnMain {
   border-radius: 15px;
-  background-image: linear-gradient(to bottom, #83ffff, #d5ffff, #83ffff);
+  background-image: linear-gradient(to bottom, #d3ffff, #eeffff, #a9ffff);
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+
 }
+
+.weatherColumnMain:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 
 .forecastColumnP{
   font-size: 0.9rem;
@@ -41,4 +51,48 @@
 
 .forecastIcon{
   width: 100%;
+}
+
+.otherLocationWeather {
+  border-radius: 15px;
+  margin: 1%;
+  padding: 2%;
+  background: linear-gradient(135deg, rgba(187,255,255,1) 9%, rgba(247,255,255,1) 31%, rgba(153,255,255,1) 68%);
+  transition: all 0.5s ease-in-out; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+}
+
+.otherLocationWeather:hover {
+  background: linear-gradient(135deg, rgba(187,255,255,1) 16%, rgba(190,255,255,1) 18%, rgba(247,255,255,1) 54%, rgba(153,255,255,1) 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.15); 
+}
+
+.otherLocationWeatherP {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.otherLocationWeather p{
+  margin: 0;
+  font-size: 1rem;
+
+}
+
+.otherLocationWeatherP2 {
+font-size: 0.5rem !important;
+}
+
+
+.otherLocationWeatherP3 {
+  font-size: 0.75rem !important;
+
+}
+
+
+.otherLocationWeatherImg{
+  width: 70px;
+  height: 70px;
+  
 }
