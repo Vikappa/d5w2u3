@@ -7,17 +7,19 @@ function ListPosition(props) {
  const [currentLoadingStatus, setCurrentLoadingStatus] = useState({loading: true, error: false})
 
   useEffect(() => {
-    async function getCurrentWeather() {
-      const weatherData = await fetchCurrentWeatherData(props.position.latitude, props.position.longitude)
-      if(weatherData) {
-      setCurrentWeather(weatherData)
-      setCurrentLoadingStatus({loading: false, error: false})
-      } else{
-        setCurrentLoadingStatus({loading: false, error: true})
-      }
+if(props.position.latitude && props.position.longitude) {
+  async function getCurrentWeather() {
+    const weatherData = await fetchCurrentWeatherData(props.position.latitude, props.position.longitude)
+    if(weatherData) {
+    setCurrentWeather(weatherData)
+    setCurrentLoadingStatus({loading: false, error: false})
+    } else{
+      setCurrentLoadingStatus({loading: false, error: true})
     }
+  }
 
-    getCurrentWeather()
+  getCurrentWeather()
+}
   }, [props.position.latitude, props.position.longitude])
 
   return (
