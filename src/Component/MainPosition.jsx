@@ -18,7 +18,7 @@ function MainPosition(props) {
 
     return (
         <div className=''>
-            <h3 className='mx-2'>Previsioni le prossime 24 ore per {props.weatherForecast.city.name}:</h3>
+            <h3 className='mx-2'>Previsioni per le prossime 24 ore per {props.weatherForecast.city.name}:</h3>
         <div className='d-flex justify-content-evenly flex-column flex-md-row gap-0 '>
                     {props.weatherForecast.list ? props.weatherForecast.list.map((dailyForecast, index) => (
                         <div className=' p-1 col-1 d-flex flex-md-column weatherColumnMain'  key={index}>

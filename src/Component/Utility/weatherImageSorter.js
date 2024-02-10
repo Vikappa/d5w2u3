@@ -8,6 +8,8 @@ const weateherImageSorter = (weatherString) => {
         return "weatherIcons/Sun.png"
       case 'Mist':
         return "weatherIcons/Haze.png"
+      case 'Fog':
+        return "weatherIcons/Haze.png"
       case 'Smoke':
         return "weatherIcons/Smoke.png"
       case 'Thunderstorm':
