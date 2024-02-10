@@ -19,7 +19,6 @@ if(props.position.latitude && props.position.longitude) {
     const weatherData = await fetchCurrentWeatherData(props.position.latitude, props.position.longitude)
     if(weatherData) {
     setCurrentWeather(weatherData)
-    console.log(weatherData)
     setCurrentLoadingStatus({loading: false, error: false})
     } else{
       setCurrentLoadingStatus({loading: false, error: true})

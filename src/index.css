@@ -1,6 +1,3 @@
-.navBarWeather{
-  
-}
 
 .navvBarWheaterP{
   margin: 0;
@@ -24,7 +21,18 @@
   background-image: linear-gradient(to bottom, #d3ffff, #eeffff, #a9ffff);
   transition: all 0.5s ease-in-out;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+}
 
+@media screen and (max-width: 768px) {
+  .weatherColumnMain {
+    width: 100% !important;
+    height: 4rem !important;
+  }
+
+  .weatherColumnMain img {
+    height: 100% !important;
+    width: auto !important;
+  }
 }
 
 .weatherColumnMain:hover {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Modal, Button, Form } from 'react-bootstrap'
 import NavbarMeteo from './Component/NavbarMeteo'
 import DashboardMeteo from './Component/DashboardMeteo'
+import { BrowserRouter, Routes,  Route } from 'react-router-dom'
 import './App.css'
 
 function App(props) {
@@ -38,43 +39,47 @@ function App(props) {
     const formData = new FormData(event.target)
     const latitude = formData.get('latitude')
     const longitude = formData.get('longitude')
-
+console.log(userLocation)
     setUserLocation({ latitude, longitude })
     setShowModal(false)
   }
   return (
     <div>
-      <NavbarMeteo logo={props.logo} userLocation={userLocation} />
-      <DashboardMeteo userLocation={userLocation} />
-
-
-      <Modal show={showModal} onHide={handleModalClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Inserisci la tua posizione</Modal.Title>
-        </Modal.Header>
-        <Form onSubmit={handleLocationSubmit}>
-          <Modal.Body>
-            <Form.Group>
-              <Form.Label>Latitudine</Form.Label>
-              <Form.Control type="text" name="latitude" required />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Longitudine</Form.Label>
-              <Form.Control type="text" name="longitude" required />
-            </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleModalClose}>
-              Chiudi
-            </Button>
-            <Button variant="primary" type="submit">
-              Salva Posizione
-            </Button>
-          </Modal.Footer>
-        </Form>
-      </Modal>
+      <BrowserRouter>
+        <NavbarMeteo logo={props.logo} userLocation={userLocation} />
+        <Routes>
+          <Route path="/" element={<DashboardMeteo userLocation={userLocation} />} />
+        </Routes>
+        
+        <Modal show={showModal} onHide={handleModalClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Inserisci la tua posizione</Modal.Title>
+          </Modal.Header>
+          <Form onSubmit={handleLocationSubmit}>
+            <Modal.Body>
+              <Form.Group>
+                <Form.Label>Latitudine</Form.Label>
+                <Form.Control type="text" name="latitude" required />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Longitudine</Form.Label>
+                <Form.Control type="text" name="longitude" required />
+              </Form.Group>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleModalClose}>
+                Chiudi
+              </Button>
+              <Button variant="primary" type="submit">
+                Salva Posizione
+              </Button>
+            </Modal.Footer>
+          </Form>
+        </Modal>
+      </BrowserRouter>
     </div>
   )
+  
 }
 
 export default App
