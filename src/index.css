@@ -23,16 +23,41 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
 }
 
+.forecastColumnPSpeed {
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: center;
+}
+
+
+.forecastColumnPHum{
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: center;
+}
+
+
 @media screen and (max-width: 768px) {
   .weatherColumnMain {
     width: 100% !important;
     height: 4rem !important;
+    margin-bottom: 0.8rem;
   }
 
   .weatherColumnMain img {
     height: 100% !important;
     width: auto !important;
   }
+
+  .forecastColumnPSpeed {
+    font-size: 0.75rem;
+  }
+  
+  
+  .forecastColumnPHum{
+    font-size: 0.65rem;
+  }
+  
 }
 
 .weatherColumnMain:hover {
@@ -87,6 +112,7 @@
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
+
 
 .otherLocationWeather p{
   margin: 0;
