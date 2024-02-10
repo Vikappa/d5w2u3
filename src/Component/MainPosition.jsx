@@ -25,8 +25,8 @@ function MainPosition(props) {
                             <p className='forecastColumnP text-center mb-0' id='forecastTime'>{dailyForecast.dt_txt}</p>
                             <img className='forecastIcon' alt="dailyIcon" src={weatherImageSorter(dailyForecast.weather[0].main)}></img>
                            <div className='d-flex flex-md-column justify-content-center align-items-start'>
-                            <p className='forecastColumnP text-center' >{maiuscFirstLetter(dailyForecast.weather[0].description)}</p>
-                            <p className='forecastColumnP text-center mb-0' >{dailyForecast.main.temp}°</p>
+                            <p className='forecastColumnP text-center p-0' >{maiuscFirstLetter(dailyForecast.weather[0].description)}</p>
+                            <p className='forecastColumnP gradiCol text-center mb-0' >{dailyForecast.main.temp}°</p>
                             <p className='forecastColumnP text-nowrap text-center mb-0' id="minmaxTemp" >(min {dailyForecast.main.temp_min} - max {dailyForecast.main.temp_max})</p>
                             <p className='forecastColumnP text-center' id='tempPerce' >Percepita: {dailyForecast.main.feels_like}</p>
                             <p className='forecastColumnP text-center' >Umidità: {dailyForecast.main.humidity}%</p>

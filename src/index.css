@@ -35,6 +35,12 @@
 
 .forecastColumnP{
   font-size: 0.9rem;
+  margin: 0;
+  text-align: center;
+}
+
+.gradiCol{
+  text-align: center;
 }
 
 #forecastTime{
