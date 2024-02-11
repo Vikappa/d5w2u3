@@ -1,198 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
-.navvBarWheaterP{
+
+/* Reset and basic styles */
+.navvBarWheaterP, .navvBarWheaterP2, .forecastTime, .forecastColumnTemp, .forecastColumnP, .minmaxTemp, .tempPerce, .otherLocationWeather p {
   margin: 0;
   text-align: start;
-  font-size: 0.6rem !important;
 }
 
-.navvBarWheaterP2{
-  margin: 0;
-  text-align: start;
+.navvBarWheaterP, .tempPerce {
+  font-size: 0.7rem !important;
+}
+
+
+
+.navvBarWheaterP2, .forecastTime, .minmaxTemp {
   font-size: 0.8rem !important;
 }
 
-.navBarWeatherImg{
-  height: 48px;
+.navBarWeatherImg {
+  height: 48px; /* Adjusted based on the common use case; override as needed */
   margin: auto 0.5rem;
 }
 
-#navBarStyle{
+
+#navBarStyle {
   position: sticky;
-  top:0;
+  top: 0;
   z-index: 2;
-  background: rgb(225,255,255);
-background: -moz-linear-gradient(135deg, rgba(225,255,255,1) 0%, rgba(247,255,255,1) 50%, rgba(207,255,255,1) 100%);
-background: -webkit-linear-gradient(135deg, rgba(225,255,255,1) 0%, rgba(247,255,255,1) 50%, rgba(207,255,255,1) 100%);
-background: linear-gradient(135deg, rgba(225,255,255,1) 0%, rgba(247,255,255,1) 50%, rgba(207,255,255,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e1ffff",endColorstr="#cfffff",GradientType=1);
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
-}
-
-#firstStripe{
-  background-color: white !important;
-}
-
-#tueLocalità{
-  box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, rgba(225,255,255,1) 0%, rgba(247,255,255,1) 50%, rgba(207,255,255,1) 100%);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  box-shadow: 2px 4px 8px 4px rgba(0,0,0,0.2);
-}
-
-.weatherColumnMain {
-  height: 200px;
-  border-radius: 15px;
-  transition: all 0.5s ease-in-out;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
-}
-
-.forecastTime{
-  font-size: 0.8rem;
-}
-
-.forecastColumnTemp{
-  font-size: 0.8rem;
-}
-
-
-.forecastColumnPSpeed {
-display: none;
-}
-
-.forecastColumnPHum{
-  display: none;
-}
-
-@media screen and (min-width: 350px) {
-
-  .forecastColumnPSpeed {
-    display: inline;
-    font-size: 1rem;
-    margin: 0;
-    text-align: center;
-  }
-
-    .forecastColumnPHum{
-    display: inline;
-    font-size: 1rem;
-    margin: 0;
-    text-align: center;
-  }
-
-}
-
-
-
-@media screen and (max-width: 768px) {
-  .weatherColumnMain {
-    width: 100% !important;
-    height: 4rem !important;
-    margin-bottom: 0.8rem;
-  }
-
-  .weatherColumnMain img {
-    height: 100% !important;
-    width: auto !important;
-  }
-
-  .forecastColumnPSpeed {
-    font-size: 0.75rem;
-  }
-  
-  
-  .forecastColumnPHum{
-    font-size: 0.65rem;
-  }
-  
-}
-
-.weatherColumnMain:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-
-.forecastColumnP{
-  font-size: 0.9rem;
-  margin: 0;
-  text-align: center;
-  max-width: 55px;
-  min-width: 55px;
-  margin-right: 3px;
-}
-
-.gradiCol{
-  text-align: center;
-}
-
-.tempWrapper{
-  min-height: 10vh !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.minmaxTemp{
-  font-size: 0.55rem;
-  width: 100%;
-}
-
-.tempPerce{
-  font-size: 0.65rem;
-}
-
-.forecastIcon{
-  width: 100%;
 }
 
 .otherLocationWeather {
+margin: 0 5px 5px 5px;
+}
+
+/* Utilizing common styles to avoid redundancy */
+.weatherColumnMain, .otherLocationWeather {
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 15px;
-  margin: 1%;
-  padding: 0;
-  padding-right: 2% !important;
   background-color: white;
-  transition: all 0.5s ease-in-out; 
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
 }
 
-.otherLocationWeather:hover {
-  transform: translateY(-5px);
-  filter: brightness(110%);
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.15); 
+.otherLocationWeather{
+  max-width: 90vw;
+  overflow-x: hidden;
 }
 
-
-.otherLocationWeatherP {
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-  margin: 1%;
+.weatherColumnMain:hover, .otherLocationWeather:hover {
+  transform: scale(1.05); /* Adjust as needed for .otherLocationWeather */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
-
-.otherLocationWeather p{
-  margin: 0;
-  padding-right: 1%;
-  font-size: 1rem;
-}
-
-.otherLocationWeatherImg{
-  width: 30px;
-  height: 30px;
-  margin: 0;
-}
-
-@media screen and (min-width: 554px) {
-  .otherLocationWeatherImg{
-    width: 50px;
-    height: 50px;
-  }
-
-  .prevPrefForIcon{
-    min-width: 190px;
-  }
-  
-  
+.forecastColumnPHum{
+  display: none;
 }
 
 .prefPrevCubetto{
@@ -203,55 +63,115 @@ border-radius: 15px;
 margin: 2px 10px 2px 10px;
 transition: all 0.4s ease;
 margin: 5px 0 5px 0;
+background-color: white;
 }
 
-.prefPrevCubetto:hover{
-  box-shadow: 0 8px 20px 0 rgba(0,0,0,0.15); 
-  margin: 2px 18px 2px 18px !important;
-  filter: brightness(120%);
-  transform: scale(120%);
-}
-
-.prefPrevCubetto img{
-  height: 100% !important;
+/* Media Queries */
+@media screen and (min-width: 350px) {
+  .forecastColumnPSpeed, .forecastColumnPHum {
+    display: inline;
+    font-size: 0.85rem;
+    text-align: center;
+    margin: 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .prefPrevCubetto{
-
-    margin: 5px 10px 5px 10px;
-
-width: 17vw;
-height: 10vh;
+  .weatherColumnMain {
+    margin-bottom: 0.8rem;
+    min-height: 20vh !important;
   }
 
+  .tempWrapper {
+    display: inline;
+  }
 
-  .prefPrevCubetto img{
+  .prefPrevCubetto {
+    margin: 5px 10px;
+    width: 17vw;
+    height: 10vh;
+  }
+  .prefPrevCubetto img {
+    margin: 5px 10px;
+    height: 100%;
+    width: auto
+  }
+
+}
+
+.forecastColumnPSpeed {
+display: none;
+}
+
+@media screen and (min-width: 450px) {
+  .forecastColumnPSpeed {
+    display: inline;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .weatherColumnMain {
+    width: 100% !important;
+    height: 4rem !important;
+    margin-bottom: 0.8rem;
+  }
+
+  .weatherColumnMain img, .prefPrevCubetto img {
+    height: 100% !important;
+    width: auto !important;
+  }
+
+  .forecastColumnPSpeed {
+    font-size: 0.75rem;
+    margin: 0 5px 0 5px;
+  }
+
+  
+
+  .forecastColumnPHum{
+    font-size: 0.65rem;
   }
 }
 
+/* Specific component styles */
+.otherLocationWeatherP {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 1%;
+}
 
-.titoloNavbar{
-  font-size: 1rem !important;
+.otherLocationWeatherImg {
+  margin: auto 0.5rem;
+  height: 36px; /* Adjusted based on the common use case; override as needed */
+}
+
+
+.gradiCol, .forecastColumnP, .tempWrapper {
+  text-align: center;
+}
+
+
+.tempWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 10vh !important;
+}
+
+.prefPrevCubetto:hover {
+  box-shadow: 0 8px 20px 0 rgba(0,0,0,0.15); 
+  filter: brightness(120%);
+  transform: scale(1.2);
+}
+
+.titoloNavbar {
+  font-size: 1rem !important; /* Adjust based on screen width as below */
   font-family: 'Nova Mono', monospace;
 }
 
-@media screen and (min-width: 345px) {
-  .titoloNavbar{
-    font-size: 1.2rem !important;
-  }}
-
-  @media screen and (min-width: 500px) {
-    .titoloNavbar{
-      font-size: 1.5rem !important;
-    }}
-
-    @media screen and (min-width: 700px) {
-      .titoloNavbar{
-        font-size: 1.5rem !important;
-      }}
-
-      @media screen and (min-width: 100px) {
-        .titoloNavbar{
-          font-size: 2rem !important;
-        }}
+/* Adjusting .titoloNavbar font size based on screen width */
+@media screen and (min-width: 345px) { .titoloNavbar { font-size: 1.2rem !important; }}
+@media screen and (min-width: 500px) { .titoloNavbar { font-size: 1.5rem !important; }}
+@media screen and (min-width: 700px) { .titoloNavbar { font-size: 2rem !important; }}

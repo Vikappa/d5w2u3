@@ -37,7 +37,7 @@ function MainPosition(props) {
                             <p className='forecastColumnP text-center mb-0 forecastTime'>{parseDate(dailyForecast.dt_txt)}</p>
                             </div>
                             <img className='forecastIcon' alt="dailyIcon" src={weateherImageSorter(dailyForecast.weather[0].id)}></img>
-                            <div className='d-flex flex-md-column justify-content-center align-items-center'>
+                            <div className='d-flex flex-md-column justify-content-evenly gap-2 align-items-center'>
                             <p className='forecastColumnP text-center p-0' >{maiuscFirstLetter(dailyForecast.weather[0].description)}</p>
                             <div className='tempWrapper' >
                             <p className='forecastColumnTemp gradiCol text-center mb-0' >{dailyForecast.main.temp}°</p>
@@ -46,7 +46,7 @@ function MainPosition(props) {
                             </div>
                              <p className='forecastColumnP text-center tempPerce' >Percepita: {dailyForecast.main.feels_like}°</p>
                             <p className='forecastColumnPHum text-center' >Umidità: {dailyForecast.main.humidity}%</p>
-                            <p className='forecastColumnPSpeed text-center ' >Vento: {dailyForecast.wind.speed}mph</p>
+                            <p className='forecastColumnPSpeed text-center' >Vento: {dailyForecast.wind.speed}mph</p>
                           </div>
                           
                         </div>
