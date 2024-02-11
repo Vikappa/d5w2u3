@@ -69,7 +69,7 @@ function DashboardMeteo(props) {
             <br />
             <h2 className='mx-2'>Altre località:</h2>
             <div className='d-flex flex-wrap'>
-            {currentLoadingStatus.loading ? <img src="https://http.cat/images/102.jpg" alt="loading" /> : currentLoadingStatus.error ? <img src="https://http.cat/images/400.jpg" alt="error" /> :
+            {
                 arrayPreferenze.map((position, index) => {
                     return (
                 <WeatherSmall key={index} position={{latitude: position.lat, longitude: position.lon}} />
