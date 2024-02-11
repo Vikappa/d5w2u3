@@ -39,10 +39,12 @@ function CubettoLocalità(props){
         <>
 {currentLoadingStatus.loading ?<p>Carico preferenza..</p> : currentLoadingStatus.error ? <p>Errore nel recupero dei dati</p> 
 :
-<Link to={`/${props.località.latitude}/${props.località.longitude}`}>
-<div className='d-flex flex-column prefPrevCubetto text-center'>
-    <p className='p-0'>{currentWeather.name}</p>
+<Link to={`/${props.località.latitude}/${props.località.longitude}`} style={{ textDecoration: 'none' }} >
+<div className='d-flex prefPrevCubetto text-center align-items-center justify-content-center'>
     <img src={weateherImageSorter(currentWeather.weather[0].id)} alt='preferences preview' />
+    <div className='d-flex flex-column align-items-center justify-content-center' >
+    <p className='p-0 m-0 mx-2' style={{ textDecoration: 'none' }}>{currentWeather.name}</p>
+    </div>
 </div>
 </Link>
 
@@ -61,9 +63,9 @@ function TueLocalità() {
 
 
     return(
-        <div className='m-3'>
+        <div className='my-3 p-3 bg-light' id="tueLocalità">
             <h3>Le tue località:</h3>
-            <div className="d-flex">
+            <div className="d-flex flex-column flex-md-row align-items-start">
                 {JSON.parse(localStorage.getItem('MesseSeasonsStorage__Preferences'))?
                  JSON.parse(localStorage.getItem('MesseSeasonsStorage__Preferences'))
                  .slice(-5) // Prende gli ultimi 5 elementi dell'array

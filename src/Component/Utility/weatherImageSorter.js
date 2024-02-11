@@ -21,7 +21,6 @@ import snowRain from './weatherIcons/snow rain.png'
 import fog from './weatherIcons/fog.png'
 
 const weateherImageSorter = (weatherString) => {
-  console.log(weatherString)
     switch (weatherString) {
       case 200:
         return thunderstorm
