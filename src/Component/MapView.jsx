@@ -5,9 +5,11 @@ import 'leaflet/dist/leaflet.css'
 const MapEvents = (props) => {
   useMapEvents({
     click: (e) => {
-      console.log(`Latitudine: ${e.latlng.lat}, Longitudine: ${e.latlng.lng}`)
       props.handleModalClose()
       props.setUserPosition({ latitude: e.latlng.lat, longitude: e.latlng.lng })
+      let realPreferences = JSON.parse(localStorage.getItem('MesseSeasonsStorage__Preferences')) || []
+      realPreferences.push({ latitude: e.latlng.lat, longitude: e.latlng.lng })
+      localStorage.setItem('MesseSeasonsStorage__Preferences', JSON.stringify(realPreferences))
     },
   })
   return null

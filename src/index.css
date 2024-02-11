@@ -136,3 +136,26 @@ font-size: 0.5rem !important;
   height: 70px;
   
 }
+
+.prefPrevCubetto{
+  width: 20vw !important;
+  height: 30%;
+  border: 1px solid black;
+  border-radius: 20%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.15); 
+}
+
+.prefPrevCubetto img{
+margin-top: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .prefPrevCubetto{
+    width: 120px !important;
+    height: 30%;
+    margin: 0 1%;
+  }
+  
+  .prefPrevCubetto img{
+  }
+}

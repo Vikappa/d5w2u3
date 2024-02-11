@@ -36,34 +36,36 @@ function App(props) {
   const handleModalClose = () => setShowModal(false)
   const handleLocationSubmit = (event) => {
     event.preventDefault()
-    
-console.log(userLocation)
-    // setUserLocation({ latitude, longitude })
     setShowModal(false)
   }
+
+  const chiudiModale = function () {
+  handleModalClose()
+  if(!userLocation.latitude || !userLocation.longitude){
+  setUserLocation({latitude: 0, longitude: 0})
+  }
+}
+  
   return (
     <div>
       <BrowserRouter>
         <NavbarMeteo logo={props.logo} userLocation={userLocation} setShowModal={setShowModal} />
         <Routes>
         <Route path="/" element={<DashboardMeteo userLocation={userLocation} />} />
-        <Route path="//:latitude/:longitude" element={<DashboardMeteo userLocation={userLocation} />} />
+        <Route path="/:latitude/:longitude" element={<DashboardMeteo userLocation={userLocation} />} />
         </Routes>
 
         <Modal show={showModal} onHide={handleModalClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Inserisci la tua posizione</Modal.Title>
+            <Modal.Title>Clicca sulla tua posizione</Modal.Title>
           </Modal.Header>
           <Form onSubmit={handleLocationSubmit}>
             <Modal.Body>
             <MapView setUserPosition={setUserLocation} handleModalClose={handleModalClose} />
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleModalClose}>
+              <Button variant="secondary" onClick={chiudiModale}>
                 Chiudi
-              </Button>
-              <Button variant="primary" type="submit">
-                Salva Posizione
               </Button>
             </Modal.Footer>
           </Form>

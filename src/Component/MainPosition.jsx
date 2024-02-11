@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import weatherImageSorter from './Utility/weatherImageSorter' // Corretto il nome dell'importazione
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import TueLocalità from './TueLocalità'
 
 function maiuscFirstLetter(str) {
     if (typeof str !== 'string' || str.length === 0) {
@@ -35,9 +36,11 @@ function MainPosition(props) {
                             <p className='forecastColumnPHum text-center' >Umidità: {dailyForecast.main.humidity}%</p>
                             <p className='forecastColumnPSpeed text-center ' >Vento: {dailyForecast.wind.speed}mph</p>
                           </div>
+                          
                         </div>
                     )) : <p>Loading...</p>}
         </div>
+        <TueLocalità/>
         </div>
     )
 }
