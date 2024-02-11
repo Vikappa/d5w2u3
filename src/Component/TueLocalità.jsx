@@ -39,7 +39,7 @@ function CubettoLocalità(props){
 {currentLoadingStatus.loading ?<p>Carico preferenza..</p> : currentLoadingStatus.error ? <p>Errore nel recupero dei dati</p> 
 :
 <Link to={`/${props.località.latitude}/${props.località.longitude}`} style={{ textDecoration: 'none' }} >
-<div className='d-flex prefPrevCubetto text-center align-items-center justify-content-center'>
+<div className='d-flex prefPrevCubetto text-center align-items-center justify-content-center prevPrefForIcon'>
     <img src={weateherImageSorter(currentWeather.weather[0].id)} alt='preferences preview' />
     <div className='d-flex flex-column align-items-center justify-content-center' >
     <p className='p-0 m-0 mx-2' style={{ textDecoration: 'none' }}>{currentWeather.name}</p>

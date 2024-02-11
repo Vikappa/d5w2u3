@@ -41,8 +41,8 @@ function MainPosition(props) {
                             <p className='forecastColumnP text-center p-0' >{maiuscFirstLetter(dailyForecast.weather[0].description)}</p>
                             <div className='tempWrapper' >
                             <p className='forecastColumnP gradiCol text-center mb-0' >{dailyForecast.main.temp}°</p>
-                            <p className='forecastColumnP text-nowrap text-center mb-0 minmaxTemp mx-auto' >(min {dailyForecast.main.temp_min} max {dailyForecast.main.temp_max})</p>
-                            <p className='forecastColumnP text-center tempPerce' >Percepita: {dailyForecast.main.feels_like}°</p>
+                            <p className='forecastColumnP text-nowrap text-center mb-0 minmaxTemp mx-auto' >min {dailyForecast.main.temp_min}</p>
+                            <p className='forecastColumnP text-nowrap text-center mb-0 minmaxTemp mx-auto' >max {dailyForecast.main.temp_max}</p>                            <p className='forecastColumnP text-center tempPerce' >Percepita: {dailyForecast.main.feels_like}°</p>
                             </div>
                             <p className='forecastColumnPHum text-center' >Umidità: {dailyForecast.main.humidity}%</p>
                             <p className='forecastColumnPSpeed text-center ' >Vento: {dailyForecast.wind.speed}mph</p>
