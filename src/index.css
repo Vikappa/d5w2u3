@@ -156,8 +156,8 @@ display: none;
 }
 
 .otherLocationWeather:hover {
-  background: linear-gradient(135deg, rgba(187,255,255,1) 16%, rgba(190,255,255,1) 18%, rgba(247,255,255,1) 54%, rgba(153,255,255,1) 100%);
   transform: translateY(-5px);
+  filter: brightness(110%);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.15); 
 }
 
