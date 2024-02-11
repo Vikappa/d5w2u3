@@ -4,7 +4,7 @@
   <img src="./public/share.png" alt="Immagine Header" width="300px" height="auto"/>
 </p>
 
-## FS0723 D5W1U3
+## FS0723 D5W2U3
 
 Benvenuti in Mezze-Seasons, un'applicazione meteorologica progettata per fornire informazioni meteorologiche accurate e aggiornate. Con Mezze-Seasons, puoi rimanere informato sulle condizioni meteorologiche nella tua zona e pianificare le tue attività di conseguenza. Esercizio realizzato durante il corso fulltstack di EPICODE. Grazie Casasola, sei stato un grande tutor :)
 
