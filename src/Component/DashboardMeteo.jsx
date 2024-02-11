@@ -1,5 +1,4 @@
 import MainPosition from './MainPosition';
-import weateherImageSorter from './Utility/weatherImageSorter';
 import { useState, useEffect } from 'react';
 import fetchCurrentWeatherData from './Utility/fetchCurrentWeatherData';
 import fetchWeatherForecast from './Utility/fetchWeatherForecast';

@@ -21,20 +21,18 @@ function CubettoLocalità(props){
         const weatherData = await fetchCurrentWeatherData(props.località.latitude, props.località.longitude)
         if(weatherData) {
         setCurrentWeather(weatherData)
-        console.log(weatherData)
         setCurrentLoadingStatus({loading: false, error: false})
         } else{
           setCurrentLoadingStatus({loading: false, error: true})
         }
       }
+      console.log(currentWeather)
       getCurrentWeather()
     }
       }, [props.località.latitude, props.località.longitude])
     
 
     useEffect(() => {
-console.log(currentWeather)
-
     }, [currentWeather])
 
     return(
@@ -44,7 +42,7 @@ console.log(currentWeather)
 <Link to={`/${props.località.latitude}/${props.località.longitude}`}>
 <div className='d-flex flex-column prefPrevCubetto text-center'>
     <p className='p-0'>{currentWeather.name}</p>
-    <img src={weateherImageSorter(currentWeather.weather[0].main)} alt='preferences preview' />
+    <img src={weateherImageSorter(currentWeather.weather[0].id)} alt='preferences preview' />
 </div>
 </Link>
 

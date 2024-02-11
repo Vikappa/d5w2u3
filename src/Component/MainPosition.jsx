@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import weatherImageSorter from './Utility/weatherImageSorter' // Corretto il nome dell'importazione
+import weateherImageSorter from './Utility/weatherImageSorter' // Corretto il nome dell'importazione
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import TueLocalità from './TueLocalità'
@@ -25,7 +25,7 @@ function MainPosition(props) {
                     {props.weatherForecast.list ? props.weatherForecast.list.map((dailyForecast, index) => (
                         <div className=' p-1 col-1 d-flex flex-md-column weatherColumnMain'  key={index}>
                             <p className='forecastColumnP text-center mb-0' id='forecastTime'>{dailyForecast.dt_txt}</p>
-                            <img className='forecastIcon' alt="dailyIcon" src={weatherImageSorter(dailyForecast.weather[0].main)}></img>
+                            <img className='forecastIcon' alt="dailyIcon" src={weateherImageSorter(dailyForecast.weather[0].id)}></img>
                             <div className='d-flex flex-md-column justify-content-center align-items-center'>
                             <p className='forecastColumnP text-center p-0' >{maiuscFirstLetter(dailyForecast.weather[0].description)}</p>
                             <div className='d-flex flex-column' >

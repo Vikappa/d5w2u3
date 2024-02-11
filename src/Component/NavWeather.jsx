@@ -31,7 +31,7 @@ if(props.position.latitude && props.position.longitude) {
 
   return (
     <div className='d-flex navBarWeather'>
-<img className='navBarWeatherImg' src={currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":weateherImageSorter(currentWeather.weather[0].main)} alt='weather forecast navbar' />
+<img className='navBarWeatherImg' src={currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":weateherImageSorter(currentWeather.weather[0].id)} alt='weather forecast navbar' />
     <div className='d-flex flex-column justify-content-center align-items-start'>
     <p className='navvBarWheaterP' >{currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":currentWeather.name}</p>
     <p className='navvBarWheaterP2' >{currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":maiuscFirstLetter(currentWeather.weather[0].description)}</p>
