@@ -32,7 +32,7 @@ function MainPosition(props) {
             <h3 className='m-3'>Previsioni per le prossime 24 ore per {props.weatherForecast.city.name}:</h3>
         <div className='d-flex justify-content-evenly flex-column flex-md-row gap-0'>
                     {props.weatherForecast.list ? props.weatherForecast.list.map((dailyForecast, index) => (
-                        <div className=' p-1 col-1 d-flex flex-md-column weatherColumnMain'  key={index}>
+                        <div className=' p-1 col-1 d-flex flex-md-column weatherColumnMain justify-content-evenly'  key={index}>
                             <div className='d-flex flex-column flex-md-row justify-content-center align-items-center'>
                             <p className='forecastColumnP text-center mb-0 forecastTime'>{parseDate(dailyForecast.dt_txt)}</p>
                             </div>
@@ -40,10 +40,11 @@ function MainPosition(props) {
                             <div className='d-flex flex-md-column justify-content-center align-items-center'>
                             <p className='forecastColumnP text-center p-0' >{maiuscFirstLetter(dailyForecast.weather[0].description)}</p>
                             <div className='tempWrapper' >
-                            <p className='forecastColumnP gradiCol text-center mb-0' >{dailyForecast.main.temp}°</p>
-                            <p className='forecastColumnP text-nowrap text-center mb-0 minmaxTemp mx-auto' >min {dailyForecast.main.temp_min}</p>
-                            <p className='forecastColumnP text-nowrap text-center mb-0 minmaxTemp mx-auto' >max {dailyForecast.main.temp_max}</p>                            <p className='forecastColumnP text-center tempPerce' >Percepita: {dailyForecast.main.feels_like}°</p>
+                            <p className='forecastColumnTemp gradiCol text-center mb-0' >{dailyForecast.main.temp}°</p>
+                            <p className='forecastColumnP text-nowrap text-center mb-0 minmaxTemp ' >min {dailyForecast.main.temp_min}</p>
+                            <p className='forecastColumnP text-nowrap text-center mb-0 minmaxTemp ' >max {dailyForecast.main.temp_max}</p>                           
                             </div>
+                             <p className='forecastColumnP text-center tempPerce' >Percepita: {dailyForecast.main.feels_like}°</p>
                             <p className='forecastColumnPHum text-center' >Umidità: {dailyForecast.main.humidity}%</p>
                             <p className='forecastColumnPSpeed text-center ' >Vento: {dailyForecast.wind.speed}mph</p>
                           </div>
