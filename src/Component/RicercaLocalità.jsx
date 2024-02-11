@@ -5,8 +5,6 @@ import Button from'react-bootstrap/Button'
 
 function RicercaLocalità(props) {
 
-const [input, setInput] = useState("")  
-
     return (
         <>
         <Button 

@@ -56,7 +56,7 @@ console.log(userLocation)
           </Modal.Header>
           <Form onSubmit={handleLocationSubmit}>
             <Modal.Body>
-            <MapView />
+            <MapView setUserPosition={setUserLocation} handleModalClose={handleModalClose} />
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleModalClose}>

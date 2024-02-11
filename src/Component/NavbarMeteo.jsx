@@ -36,4 +36,4 @@ function NavbarMeteo(props) {
   )
 }
 
-export default NavbarMeteo;
+export default NavbarMeteo
