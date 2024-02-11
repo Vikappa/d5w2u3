@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
 .navvBarWheaterP{
   margin: 0;
   text-align: start;
@@ -222,4 +222,10 @@ height: 10vh;
 
   .prefPrevCubetto img{
   }
+}
+
+
+.titoloNavbar{
+  font-size: 2rem !important;
+  font-family: 'Nova Mono', monospace;
 }

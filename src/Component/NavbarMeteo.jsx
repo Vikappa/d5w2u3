@@ -14,7 +14,7 @@ function NavbarMeteo(props) {
   return (
     <Navbar expand="lg" className="container-fluid bg-body-tertiary d-flex justify-content-between m-0 p-0" id="navBarStyle">
 <Link to="/" style={{ textDecoration: 'none' }}>
-<Navbar.Brand className='p-0 m-0 d-flex justify-content-center align-items-center py-1'>
+<Navbar.Brand className='p-0 m-0 d-flex justify-content-center align-items-center py-1 titoloNavbar'>
         <img className=' m-0 mx-3 p-0' src={props.logo} height={"36px"} alt='Logo MezzeSeasons'></img>
         Mezze Seasons
 </Navbar.Brand>
