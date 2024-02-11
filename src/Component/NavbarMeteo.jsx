@@ -1,10 +1,12 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavWeather from './NavWeather';
-import { Link } from'react-router-dom';
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import Form from 'react-bootstrap/Form'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import NavWeather from './NavWeather'
+import { Link } from'react-router-dom'
+import RicercaLocalità from './RicercaLocalità'
+
 
 function NavbarMeteo(props) {
 
@@ -24,15 +26,9 @@ function NavbarMeteo(props) {
         <NavWeather position={props.userLocation} />
 </div>
 
-          <Form className="d-flex mx-auto">
-            <Form.Control
-              type="search"
-              placeholder="La tua località.."
-              className="me-2"
-              aria-label="La tua località.."
-              />
-            <Button variant="outline-success">Cerca</Button>
-          </Form>
+          <div className="d-flex mx-auto">
+<RicercaLocalità setShowModal={props.setShowModal}  />
+          </div>
 
               </div>
 

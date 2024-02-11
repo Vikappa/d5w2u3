@@ -4,6 +4,7 @@ import NavbarMeteo from './Component/NavbarMeteo'
 import DashboardMeteo from './Component/DashboardMeteo'
 import { BrowserRouter, Routes,  Route } from 'react-router-dom'
 import './App.css'
+import MapView from './Component/MapView'
 
 function App(props) {
   const [userLocation, setUserLocation] = useState({ latitude: null, longitude: null })
@@ -36,36 +37,26 @@ function App(props) {
   const handleLocationSubmit = (event) => {
     event.preventDefault()
     
-    const formData = new FormData(event.target)
-    const latitude = formData.get('latitude')
-    const longitude = formData.get('longitude')
 console.log(userLocation)
-    setUserLocation({ latitude, longitude })
+    // setUserLocation({ latitude, longitude })
     setShowModal(false)
   }
   return (
     <div>
       <BrowserRouter>
-        <NavbarMeteo logo={props.logo} userLocation={userLocation} />
+        <NavbarMeteo logo={props.logo} userLocation={userLocation} setShowModal={setShowModal} />
         <Routes>
         <Route path="/" element={<DashboardMeteo userLocation={userLocation} />} />
         <Route path="//:latitude/:longitude" element={<DashboardMeteo userLocation={userLocation} />} />
         </Routes>
-        
+
         <Modal show={showModal} onHide={handleModalClose}>
           <Modal.Header closeButton>
             <Modal.Title>Inserisci la tua posizione</Modal.Title>
           </Modal.Header>
           <Form onSubmit={handleLocationSubmit}>
             <Modal.Body>
-              <Form.Group>
-                <Form.Label>Latitudine</Form.Label>
-                <Form.Control type="text" name="latitude" required />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Longitudine</Form.Label>
-                <Form.Control type="text" name="longitude" required />
-              </Form.Group>
+            <MapView />
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleModalClose}>

@@ -42,7 +42,6 @@ function DashboardMeteo(props) {
                 }
             }
             getCurrentWeather()
-            console.log(latitude, longitude)
         }
     }, [latitude, longitude]) // Osserva i cambiamenti nell'url
 
