@@ -48,7 +48,8 @@ console.log(userLocation)
       <BrowserRouter>
         <NavbarMeteo logo={props.logo} userLocation={userLocation} />
         <Routes>
-          <Route path="/" element={<DashboardMeteo userLocation={userLocation} />} />
+        <Route path="/" element={<DashboardMeteo userLocation={userLocation} />} />
+        <Route path="//:latitude/:longitude" element={<DashboardMeteo userLocation={userLocation} />} />
         </Routes>
         
         <Modal show={showModal} onHide={handleModalClose}>

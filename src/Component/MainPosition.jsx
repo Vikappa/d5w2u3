@@ -14,6 +14,7 @@ function maiuscFirstLetter(str) {
 function MainPosition(props) {
 
     useEffect(() => {
+        // Fai robe se cambiano i props
     }, [props.weatherForecast]) 
 
     return (

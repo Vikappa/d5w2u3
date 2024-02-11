@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import fetchCurrentWeatherData from './Utility/fetchCurrentWeatherData'
 import weateherImageSorter from './Utility/weatherImageSorter'
+import { Link } from 'react-router-dom'
 
 function WeatherSmall(props) {
   const [currentWeather, setCurrentWeather] = useState({})
@@ -30,6 +31,7 @@ if(props.position.latitude && props.position.longitude) {
   }, [props.position.latitude, props.position.longitude])
 
   return (
+    <Link to={`/${props.position.latitude}/${props.position.longitude}`}>
     <div className='d-flex otherLocationWeather p-1'>
       <div className='d-flex flex-column justify-content-center m-1 mx-3 align-items-start'>
     <img className='otherLocationWeatherImg' src={currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":weateherImageSorter(currentWeather.weather[0].main)} alt='weather forecast preview' />
@@ -40,7 +42,8 @@ if(props.position.latitude && props.position.longitude) {
     <p className='otherLocationWeatherP3' >Temperatura: {currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":currentWeather.main.temp}°</p>
     </div>
     </div>
+    </Link>
   )
 }
+export default React.memo(WeatherSmall)
 
-export default WeatherSmall
