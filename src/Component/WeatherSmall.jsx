@@ -35,11 +35,11 @@ currentLoadingStatus.loading? <div><p>Loading...</p></div> : (
   currentLoadingStatus.error? <div><p>Errore</p></div> : (
     
   <Link to={`/${props.position.latitude}/${props.position.longitude}`} style={{ textDecoration: 'none' }}>
-  <div className='d-flex otherLocationWeather' >
+  <div className='d-flex otherLocationWeather pe-4' >
     <div className='d-flex flex-column justify-content-center m-1 mx-3 align-items-start'>
   <img className='otherLocationWeatherImg' src={currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":weateherImageSorter(currentWeather.weather[0].id)} alt='weather forecast preview' />
  </div>
-  <div className='d-flex flex-column justify-content-center align-items-start'>
+  <div className='d-flex flex-column text-nowrap justify-content-center align-items-start'>
   <p className='otherLocationWeatherP' >{currentLoadingStatus.loading?"Loading":currentLoadingStatus.error?"Errore":currentWeather.name}</p>
   </div>
   </div>

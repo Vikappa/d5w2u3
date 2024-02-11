@@ -26,7 +26,6 @@ function CubettoLocalità(props){
           setCurrentLoadingStatus({loading: false, error: true})
         }
       }
-      console.log(currentWeather)
       getCurrentWeather()
     }
       }, [props.località.latitude, props.località.longitude])

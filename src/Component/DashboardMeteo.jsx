@@ -29,6 +29,19 @@ function DashboardMeteo(props) {
     }
 
     useEffect(() => {
+        if (JSON.parse(localStorage.getItem('MesseSeasonsStorage__Preferences'))) {
+            for (let index = 0; index < JSON.parse(localStorage.getItem('MesseSeasonsStorage__Preferences')).length; index++) {
+                 arrayPreferenze.push(
+                    {
+        lat:  JSON.parse(localStorage.getItem('MesseSeasonsStorage__Preferences'))[index].latitude, lon: JSON.parse(localStorage.getItem('MesseSeasonsStorage__Preferences'))[index].longitude}
+                
+                )
+console.log(arrayPreferenze)
+            }
+        }
+      }, [])
+
+    useEffect(() => {
         if (latitude && longitude) {
             async function getCurrentWeather() {
                 setCurrentLoadingStatus({ loading: true, error: false }) // Resetta lo stato di caricamento
